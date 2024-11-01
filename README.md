@@ -9,7 +9,8 @@ The project relies only on **tinyUSB** stack, so it also should be also easily p
 
 ### Required parts
 * Raspberry Pi Pico or Pico 2 / another RP2040/RP2350 board
-* if non-3.3V operation required - adequate level shifter, TXS0108E is perfect for the task
+* if non-3.3V operation required - adequate fast level shifter capable of [loading 1k TCK pulldown](https://www.intel.com/content/www/us/en/docs/programmable/683546/current/pull-up-and-pull-down-of-jtag-pins-during.html)
+* i tested TXS0108E i had, and while it works, i can't recommend it (if 1k pulldown is present), because TCK quickly drops to ~2v instead of steady 3.3v
 
 ### Flashing
 * Get latest release uf2 or build your own:
@@ -114,7 +115,20 @@ Now you can program Intel/Altera JTAG/AS/PS devices with Quartus or use it as a 
 Unfortunately i can't confirm AS/PS operation, because i don't have such devices around, 
 but looking at the protocol there should be no issues in theory
 
+## Prettier version
+I found RP2040-zero board the perfect size for an assembled device and also added a TXS0108E (see 'Required parts' for concerns regarding this exact level-shifter)
+
+This setup uses onboard ws2812 rgb led (support included), pins 8-14 as data I/O and pin 15 as shifter output enable
+
+![plot](./doc/v2.jpg)
+
+And a 3D-printable enclosure. Instructions, STLs and a Fusion 360 source file are [here](./3d_print/)
+
+![plot](./doc/v2_enclosure.jpg)
+
+
 ## Credits
 * Protocol description, specs, FT245 EEPROM taken from
 [Teensy_Blaster](https://github.com/Memotech-Bill/Teensy_Blaster/),
 [usbd-blaster](https://github.com/sameer/usbd-blaster) and 20-year old forum posts
+* WS2812 PIO code taken from [pico-examples](https://github.com/raspberrypi/pico-examples)
