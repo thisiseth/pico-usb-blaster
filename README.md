@@ -10,7 +10,7 @@ The project relies only on **tinyUSB** stack, so it also should be also easily p
 ### Required parts
 * Raspberry Pi Pico or Pico 2 / another RP2040/RP2350 board
 * if non-3.3V operation required - adequate fast level shifter capable of [loading 1k TCK pulldown](https://www.intel.com/content/www/us/en/docs/programmable/683546/current/pull-up-and-pull-down-of-jtag-pins-during.html)
-* i tested TXS0108E i had, and while it works, i can't recommend it, because TCK quickly drops to ~2v instead of steady 3.3v
+* i tested TXS0108E i had, and while it works, i can't recommend it (if 1k pulldown is present), because TCK quickly drops to ~2v instead of steady 3.3v
 
 ### Flashing
 * Get latest release uf2 or build your own:
