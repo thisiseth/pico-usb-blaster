@@ -115,7 +115,15 @@ Now you can program Intel/Altera JTAG/AS/PS devices with Quartus or use it as a 
 Unfortunately i can't confirm AS/PS operation, because i don't have such devices around, 
 but looking at the protocol there should be no issues in theory
 
+## Prettier version
+I found RP2040-zero board the perfect size for an assembled device and also added a TXS0108E (see 'Required parts' for concerns regarding this exact level-shifter)
+
+This setup uses onboard ws2812 rgb led (support included), pins 8-14 as data I/O and pin 15 as shifter output enable
+
+![plot](./doc/v2.jpg)
+
 ## Credits
 * Protocol description, specs, FT245 EEPROM taken from
 [Teensy_Blaster](https://github.com/Memotech-Bill/Teensy_Blaster/),
 [usbd-blaster](https://github.com/sameer/usbd-blaster) and 20-year old forum posts
+* WS2812 PIO code taken from [pico-examples](https://github.com/raspberrypi/pico-examples)
