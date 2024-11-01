@@ -9,8 +9,8 @@
 
 // for boards with WS2812 rgb
 //#define ACTIVE_LED_WS2812_PIN   16
-//#define ACTIVE_LED_WS2812_COLOR_OFF 0x00080000
-//#define ACTIVE_LED_WS2812_COLOR_ON 0x08000000
+//#define ACTIVE_LED_WS2812_COLOR_OFF 0x00080000 //standby color, dim red
+//#define ACTIVE_LED_WS2812_COLOR_ON 0x08000000 //active color, dim green
 
 // if level shifter is used
 //#define LEVEL_SHIFTER_OE_PIN    15
